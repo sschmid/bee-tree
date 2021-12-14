@@ -1,14 +1,33 @@
-#!/usr/bin/env bash
+: "${TREE_IGNORE:="bin|obj|Build|Temp"}"
 
-tree::_new() {
-  echo '# tree'
-  echo 'TREE_IGNORE="bin|obj|Build|Temp"'
+tree::help() {
+  cat << 'EOF'
+Create dir and file overviews with tree - https://github.com/sschmid/bee-tree
+
+template:
+
+  TREE_IGNORE="bin|obj|Build|Temp" # default
+
+usage:
+
+  dirs             print tree of dirs only
+  dirs_and_files   print tree of dirs and files
+
+bee dependencies:
+
+  none
+
+dependencies:
+
+  tree
+
+EOF
 }
 
-tree::create_dirs() {
+tree::dirs() {
   tree -I "${TREE_IGNORE:-}" --noreport -d
 }
 
-tree::create_dirs_and_files() {
+tree::dirs_and_files() {
   tree -I "${TREE_IGNORE:-}" --noreport --dirsfirst
 }
