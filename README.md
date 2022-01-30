@@ -1,15 +1,19 @@
 # tree
-Create dir and file overviews with tree
+Create directory and file overviews with tree
 
-## `tree::create_dirs`
-Print tree of dirs only
+https://github.com/sschmid/bee-tree
 
-## `tree::create_dirs_and_files`
-Print tree of dirs and files
+```
+template:
 
-----------------------------------------
+  TREE_IGNORE="bin|obj|Build|Temp" # default
 
-## Dependencies
+usage:
 
-### 3rd party
-- `tree`
+  dirs             print tree of dirs only
+  dirs_and_files   print tree of dirs and files
+
+requirements:
+
+  tree
+```
